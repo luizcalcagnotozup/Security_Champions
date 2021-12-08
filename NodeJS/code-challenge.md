@@ -58,3 +58,8 @@ module.exports = UserRequest
 Tela do banco de dados: 
 
 ![image](https://user-images.githubusercontent.com/90329628/141365554-585488de-831a-4610-b9ec-2127d161fd69.png)
+
+
+## Solução
+
+O vazamento foi feito em uma intercepção dos dados de acesso ao endpoint, os dados não estão criptografados até chegar ao DTO. 

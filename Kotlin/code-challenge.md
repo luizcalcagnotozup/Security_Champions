@@ -19,3 +19,8 @@ existia na plataforma. Com isso resolveu falar com o Gerente, que então entrou 
 Baseado no código abaixo, formule uma explicação do que pode ter ocorrido.
 
 O Controller da API no arquivo challenge.kt
+
+## Solução
+Os endpoints de cadastrar e remover possuem somente duas ROLES que seriam "ROLE_ADMIN e ROLE_CORRETOR", com esse permissionamento, qualquer um pode adicionar ou excluir um imóvel, no caso, um corretor "X", pode tranquilamente excluir um imóvel do corretor "Y", e depois cadastrar este imóvel no nome do corretor "X".
+
+Para solucionar este problema, poderiamos utilizar o "Micronauts Validation", para validar se o ID do imóvel cadastado, esta vinculado ao corretor que solicitou a remoção, caso esteja vinculado ele deixar remover o imóvel. Desta forma somente quem cadastrou o imóvel consegue exclui-lo. Seria interessante também adicionar o OAuth 2 para ter o histórico de acessos aos endpoints e passar todo o permissionamento para ele.
